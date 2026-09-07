@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cenwvphfkh3el"]
 
 [ext_resource type="PackedScene" uid="uid://cyh8yrsokurny" path="res://player/player.tscn" id="1_tf838"]
+[ext_resource type="PackedScene" uid="uid://kpb4chml8u5f" path="res://Asset/Box/Box.tscn" id="2_n8bxl"]
+[ext_resource type="PackedScene" uid="uid://d4a6uq4akepgb" path="res://Asset/Wrench/Wrench.tscn" id="3_pyd3v"]
+[ext_resource type="PackedScene" uid="uid://cktlshhe6u5r5" path="res://Asset/Fuse/Fuse.tscn" id="4_4l8u5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_khhxn"]
 size = Vector3(2.0839844, 0.12188721, 2.0699463)
@@ -21,3 +24,12 @@ mesh = SubResource("PlaneMesh_s1fef")
 
 [node name="Player" parent="." unique_id=965063473 instance=ExtResource("1_tf838")]
 transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, 0.6097492, 0)
+
+[node name="Node3D" parent="." unique_id=1432651663 instance=ExtResource("2_n8bxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2840712, -0.0005903989, -2.435182)
+
+[node name="Wrench" parent="." unique_id=1082256035 instance=ExtResource("3_pyd3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4380019, 0.7356756, 0.9646072)
+
+[node name="Fuse" parent="." unique_id=1962960150 instance=ExtResource("4_4l8u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.425, -1)

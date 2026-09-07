@@ -1,8 +1,16 @@
 extends CharacterBody3D
 
+@onready var raycast = $CameraController/RayCast3D
+@onready var UI = $CameraView
+@onready var flashlight = $CameraController/SpotLight3D
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.003
+
+var haveItem = false
+
+var flashlighton = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -37,3 +45,36 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _process(delta: float) -> void:
+	checkObjectInfront()
+	if Input.is_action_just_pressed("flashlight"):
+		flashLightFunction()
+	
+
+func checkObjectInfront():
+	if raycast.is_colliding():
+		if !haveItem:
+			var item = raycast.get_collider()
+			if item is itemClass:
+				#print(item.getInteractive())
+				UI.TextChanger(item.getInteractive())
+				UI.setCollition(true)
+				if Input.is_action_just_pressed("PickUp"):
+					pickup()
+		else:
+			UI.TextChanger("Hand Is Full")
+			UI.setCollition(true)
+	else:
+		UI.setCollition(false)
+
+func pickup():
+	print("Click")
+
+func flashLightFunction():
+	flashlighton = !flashlighton
+	flashlight.visible = flashlighton
+
+
+	
