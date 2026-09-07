@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d4a6uq4akepgb"]
+
+[ext_resource type="PackedScene" uid="uid://c5kp11otxrlu8" path="res://Asset/Wrench/glb/wrench.glb" id="1_4p3vx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1fef"]
+size = Vector3(0.13647461, 0.06046295, 0.5062866)
+
+[node name="Wrench" type="StaticBody3D" unique_id=1082256035]
+
+[node name="Sketchfab_Scene" parent="." unique_id=657429296 instance=ExtResource("1_4p3vx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1119606652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036499023, 0.0073509216, -0.019378662)
+shape = SubResource("BoxShape3D_s1fef")

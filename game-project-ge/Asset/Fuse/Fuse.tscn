@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cktlshhe6u5r5"]
+
+[ext_resource type="PackedScene" uid="uid://brgmheecuc6kd" path="res://Asset/Fuse/Model/FuseModel.tscn" id="1_2nnah"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s1fef"]
+height = 2.0124512
+radius = 0.37402344
+
+[node name="Fuse" type="StaticBody3D" unique_id=1962960150]
+
+[node name="FuseModel" parent="." unique_id=782480346 instance=ExtResource("1_2nnah")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=66695635]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0.018499754, 0)
+shape = SubResource("CylinderShape3D_s1fef")

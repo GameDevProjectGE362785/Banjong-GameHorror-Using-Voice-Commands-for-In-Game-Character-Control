@@ -10,6 +10,7 @@ size = Vector3(2.0839844, 0.12188721, 2.0699463)
 [node name="Test" type="Node3D" unique_id=56532010]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=715995170]
+transform = Transform3D(4.985, 0, 0, 0, 4.985, 0, 0, 0, 4.985, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=807308150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06542969, -0.014190674, -0.046569824)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://kpb4chml8u5f"]
+
+[ext_resource type="PackedScene" uid="uid://b5djgvtqjgvca" path="res://Asset/Box/glb/cc0_free_cardboard_box.glb" id="1_28h57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1fef"]
+size = Vector3(0.7509155, 0.45965576, 0.56347656)
+
+[node name="Node3D" type="StaticBody3D" unique_id=1432651663]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1274883815 instance=ExtResource("1_28h57")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=58811613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022064209, 0.23782349, -0.00048828125)
+shape = SubResource("BoxShape3D_s1fef")

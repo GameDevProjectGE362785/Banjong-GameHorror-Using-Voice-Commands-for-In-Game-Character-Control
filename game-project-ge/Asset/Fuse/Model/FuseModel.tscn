@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://brgmheecuc6kd"]
+
+[ext_resource type="Material" uid="uid://ch2dasj4gmaww" path="res://Asset/Fuse/Model/Head.tres" id="1_cgjrx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsuaf"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.19607843)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s1fef"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_khhxn"]
+
+[node name="FuseModel" type="Node3D" unique_id=782480346]
+
+[node name="rod" type="MeshInstance3D" parent="." unique_id=529652768]
+transform = Transform3D(0.21, 0, 0, 0, 0.31, 0, 0, 0, 0.21, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_qsuaf")
+mesh = SubResource("CylinderMesh_s1fef")
+
+[node name="Header" type="MeshInstance3D" parent="." unique_id=1305540615]
+transform = Transform3D(0.255, 0, 0, 0, 0.06, 0, 0, 0, 0.245, 0, -0.27596024, 0)
+material_override = ExtResource("1_cgjrx")
+mesh = SubResource("CylinderMesh_khhxn")
+
+[node name="Header2" type="MeshInstance3D" parent="." unique_id=1803346983]
+transform = Transform3D(0.255, 0, 0, 0, 0.06, 0, 0, 0, 0.245, 0, 0.30890933, 0)
+material_override = ExtResource("1_cgjrx")
+mesh = SubResource("CylinderMesh_khhxn")
