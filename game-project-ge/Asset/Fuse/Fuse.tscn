@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://cktlshhe6u5r5"]
 
 [ext_resource type="PackedScene" uid="uid://brgmheecuc6kd" path="res://Asset/Fuse/Model/FuseModel.tscn" id="1_2nnah"]
+[ext_resource type="Script" uid="uid://do5wfhnuou2sy" path="res://Asset/Fuse/fuse.gd" id="1_n4yyd"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s1fef"]
 height = 2.0124512
 radius = 0.37402344
 
 [node name="Fuse" type="StaticBody3D" unique_id=1962960150]
+collision_layer = 3
+script = ExtResource("1_n4yyd")
 
 [node name="FuseModel" parent="." unique_id=782480346 instance=ExtResource("1_2nnah")]
 

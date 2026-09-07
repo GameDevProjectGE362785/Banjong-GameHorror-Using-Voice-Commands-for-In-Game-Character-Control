@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://d4a6uq4akepgb"]
 
 [ext_resource type="PackedScene" uid="uid://c5kp11otxrlu8" path="res://Asset/Wrench/glb/wrench.glb" id="1_4p3vx"]
+[ext_resource type="Script" uid="uid://cu68yolqqpep8" path="res://Asset/Wrench/wrench.gd" id="1_edabk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s1fef"]
 size = Vector3(0.13647461, 0.06046295, 0.5062866)
 
 [node name="Wrench" type="StaticBody3D" unique_id=1082256035]
+collision_layer = 3
+script = ExtResource("1_edabk")
 
 [node name="Sketchfab_Scene" parent="." unique_id=657429296 instance=ExtResource("1_4p3vx")]
 

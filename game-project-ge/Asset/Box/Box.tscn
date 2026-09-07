@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://kpb4chml8u5f"]
 
 [ext_resource type="PackedScene" uid="uid://b5djgvtqjgvca" path="res://Asset/Box/glb/cc0_free_cardboard_box.glb" id="1_28h57"]
+[ext_resource type="Script" uid="uid://3bhp6g8dsmrj" path="res://Asset/Box/box.gd" id="1_dof8h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s1fef"]
 size = Vector3(0.7509155, 0.45965576, 0.56347656)
 
-[node name="Node3D" type="StaticBody3D" unique_id=1432651663]
+[node name="Box" type="StaticBody3D" unique_id=1432651663]
+collision_layer = 3
+script = ExtResource("1_dof8h")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1274883815 instance=ExtResource("1_28h57")]
 
