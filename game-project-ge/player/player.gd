@@ -64,8 +64,8 @@ func _process(delta: float) -> void:
 		flashLightFunction()
 	if Input.is_action_just_pressed("inventory"):
 		UI.toggle_inventory()
-	if Input.is_action_just_pressed("use_item"):
-		use_selected_item()
+	if Input.is_action_just_pressed("PickUp"):
+		use_pickup_or_item()
 	if Input.is_action_just_pressed("drop_item"):
 		drop_selected_item()
 	
@@ -77,8 +77,6 @@ func checkObjectInfront():
 			if inventory.size() < INVENTORY_SIZE:
 				UI.TextChanger(item.getInteractive())
 				UI.setCollition(true)
-				if Input.is_action_just_pressed("PickUp"):
-					pickup(item)
 			else:
 				UI.TextChanger("Inventory Full")
 				UI.setCollition(true)
@@ -86,6 +84,22 @@ func checkObjectInfront():
 			UI.setCollition(false)
 	else:
 		UI.setCollition(false)
+
+func use_pickup_or_item() -> void:
+	if not raycast.is_colliding():
+		UI.TextChanger("Aim At An Object")
+		UI.setCollition(true)
+		return
+
+	var target = raycast.get_collider()
+	if target is itemClass:
+		if inventory.size() >= INVENTORY_SIZE:
+			UI.TextChanger("Inventory Full")
+			UI.setCollition(true)
+			return
+		pickup(target)
+	else:
+		use_selected_item()
 
 func pickup(item: itemClass) -> void:
 	if inventory.size() >= INVENTORY_SIZE or not is_instance_valid(item):

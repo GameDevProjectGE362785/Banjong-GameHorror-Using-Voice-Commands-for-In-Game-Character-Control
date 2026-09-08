@@ -28,7 +28,7 @@ func update_inventory(items: Array[String], selected_index: int = -1) -> void:
 		if index == selected_index:
 			marker = "> "
 		lines.append("%s%d. %s" % [marker, slot_number, slot_text])
-	inventory_label.text = "Inventory\n1-6 Select | U Use | Q Drop\n" + "\n".join(lines)
+	inventory_label.text = "Inventory\n1-6 Select | F Use | Q Drop\n" + "\n".join(lines)
 
 func toggle_inventory() -> void:
 	inventory_panel.visible = not inventory_panel.visible
