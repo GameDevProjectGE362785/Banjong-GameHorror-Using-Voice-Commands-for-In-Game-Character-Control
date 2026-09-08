@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://bf63xjy04jjpv"
 driver/enable_input=true
 driver/mix_rate=16000
 input/transcribe/use_gpu=false
@@ -25,6 +24,7 @@ input/transcribe/use_gpu=false
 [autoload]
 
 GameClock="*res://Asset/GameClock/game_clock.gd"
+EventScheduler="*res://Asset/EventScheduler/event_scheduler.gd"
 
 [display]
 

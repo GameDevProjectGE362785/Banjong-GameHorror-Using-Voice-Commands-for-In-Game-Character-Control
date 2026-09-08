@@ -9,7 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	
-func _on_game_clock_time_changed(hour: int, minute: int) -> void:
-	text = "%d : %d" % [hour,minute]
+
+
+
+func _on_events_scheduler_beat_triggered(hour: int, beat_id: StringName) -> void:
+	text = "Event : %s" % beat_id

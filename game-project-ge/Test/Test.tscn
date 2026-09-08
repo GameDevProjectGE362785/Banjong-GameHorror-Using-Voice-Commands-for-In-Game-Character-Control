@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cyh8yrsokurny" path="res://player/player.tscn" id="1_tf838"]
 [ext_resource type="PackedScene" uid="uid://kpb4chml8u5f" path="res://Asset/Box/Box.tscn" id="2_n8bxl"]
+[ext_resource type="PackedScene" uid="uid://dbntcfceyxx75" path="res://Asset/EventScheduler/events_scheduler.tscn" id="2_un7ao"]
 [ext_resource type="PackedScene" uid="uid://d4a6uq4akepgb" path="res://Asset/Wrench/Wrench.tscn" id="3_pyd3v"]
 [ext_resource type="PackedScene" uid="uid://cktlshhe6u5r5" path="res://Asset/Fuse/Fuse.tscn" id="4_4l8u5"]
 [ext_resource type="PackedScene" uid="uid://ps4na6ndhgc4" path="res://Asset/GameClock/game_clock.tscn" id="5_lg8mm"]
@@ -12,6 +13,10 @@ size = Vector3(2.0839844, 0.12188721, 2.0699463)
 [sub_resource type="PlaneMesh" id="PlaneMesh_s1fef"]
 
 [node name="Test" type="Node3D" unique_id=56532010]
+
+[node name="GameClock" parent="." unique_id=1905810359 instance=ExtResource("5_lg8mm")]
+
+[node name="EventsScheduler" parent="." unique_id=659291456 instance=ExtResource("2_un7ao")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=715995170]
 transform = Transform3D(4.985, 0, 0, 0, 4.985, 0, 0, 0, 4.985, 0, 0, 0)
@@ -35,4 +40,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4380019, 0.7356756, 0.96460
 [node name="Fuse" parent="." unique_id=1962960150 instance=ExtResource("4_4l8u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.425, -1)
 
-[node name="GameClock" parent="." unique_id=1905810359 instance=ExtResource("5_lg8mm")]
+[connection signal="hour_tick" from="GameClock" to="EventsScheduler" method="_on_hour_tick"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dbntcfceyxx75"]
+
+[ext_resource type="Script" uid="uid://d2yvo7bra43ny" path="res://Asset/EventScheduler/event_scheduler.gd" id="1_yexww"]
+[ext_resource type="Script" uid="uid://egkintikqllc" path="res://Asset/EventScheduler/event_display.gd" id="2_dls8l"]
+
+[node name="EventsScheduler" type="Node" unique_id=659291456]
+script = ExtResource("1_yexww")
+
+[node name="EventDisplay" type="Label" parent="." unique_id=1356006399]
+anchors_preset = -1
+anchor_left = 0.0026041667
+anchor_top = 0.1095679
+anchor_right = 1.0026041
+anchor_bottom = 0.16203703
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Event"
+horizontal_alignment = 1
+script = ExtResource("2_dls8l")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="beat_triggered" from="." to="EventDisplay" method="_on_events_scheduler_beat_triggered"]
