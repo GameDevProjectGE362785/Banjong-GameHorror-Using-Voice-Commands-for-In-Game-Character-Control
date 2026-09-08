@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3wy0d0xqjq68"]
+
+[ext_resource type="Script" path="res://Asset/LightingSystem/lighting_system.gd" id="1_hhp5d"]
+
+[node name="LightingSystem" type="Node"]
+script = ExtResource("1_hhp5d")
