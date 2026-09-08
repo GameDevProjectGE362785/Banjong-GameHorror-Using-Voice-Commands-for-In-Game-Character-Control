@@ -7,7 +7,7 @@
 size = Vector3(0.7509155, 0.45965576, 0.56347656)
 
 [node name="Box" type="StaticBody3D" unique_id=1432651663]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_dof8h")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1274883815 instance=ExtResource("1_28h57")]

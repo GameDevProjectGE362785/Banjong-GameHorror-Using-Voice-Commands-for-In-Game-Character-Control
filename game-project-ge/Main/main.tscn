@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://br2olntaaiitq"]
+
+[ext_resource type="PackedScene" uid="uid://c6cx3xifpif36" path="res://model/3d_online_factory_1_knt.glb" id="1_eunhr"]
+[ext_resource type="PackedScene" uid="uid://ps4na6ndhgc4" path="res://Asset/GameClock/game_clock.tscn" id="2_k3v36"]
+[ext_resource type="PackedScene" uid="uid://dbntcfceyxx75" path="res://Asset/EventScheduler/events_scheduler.tscn" id="3_liyct"]
+[ext_resource type="PackedScene" uid="uid://cyh8yrsokurny" path="res://player/player.tscn" id="4_ib3t1"]
+
+[node name="Main" type="Node" unique_id=1581661248]
+
+[node name="Sketchfab_Scene" parent="." unique_id=279301485 instance=ExtResource("1_eunhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.476735, -0.14070952, 24.282015)
+
+[node name="GameClock" parent="." unique_id=1905810359 instance=ExtResource("2_k3v36")]
+
+[node name="EventsScheduler" parent="." unique_id=659291456 instance=ExtResource("3_liyct")]
+
+[node name="Player" parent="." unique_id=965063473 instance=ExtResource("4_ib3t1")]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 1.836308, 0.5569247, 0.15376043)

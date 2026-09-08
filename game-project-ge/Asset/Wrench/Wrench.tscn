@@ -7,7 +7,7 @@
 size = Vector3(0.13647461, 0.06046295, 0.5062866)
 
 [node name="Wrench" type="StaticBody3D" unique_id=1082256035]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_edabk")
 
 [node name="Sketchfab_Scene" parent="." unique_id=657429296 instance=ExtResource("1_4p3vx")]

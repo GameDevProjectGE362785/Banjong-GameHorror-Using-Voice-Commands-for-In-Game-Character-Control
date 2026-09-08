@@ -8,7 +8,7 @@ height = 2.0124512
 radius = 0.37402344
 
 [node name="Fuse" type="StaticBody3D" unique_id=1962960150]
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_n4yyd")
 
 [node name="FuseModel" parent="." unique_id=782480346 instance=ExtResource("1_2nnah")]

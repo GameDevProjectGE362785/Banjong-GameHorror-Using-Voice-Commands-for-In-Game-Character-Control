@@ -29,7 +29,7 @@ shape = SubResource("BoxShape3D_khhxn")
 mesh = SubResource("PlaneMesh_s1fef")
 
 [node name="Player" parent="." unique_id=965063473 instance=ExtResource("1_tf838")]
-transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, 0.6097492, 0)
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, 0.28874516, 0)
 
 [node name="Node3D" parent="." unique_id=1432651663 instance=ExtResource("2_n8bxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2840712, -0.0005903989, -2.435182)
@@ -38,6 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2840712, -0.0005903989, -2.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4380019, 0.7356756, 0.9646072)
 
 [node name="Fuse" parent="." unique_id=1962960150 instance=ExtResource("4_4l8u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.425, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9740871, 0.33597302, -1)
+collision_layer = 3
 
 [connection signal="hour_tick" from="GameClock" to="EventsScheduler" method="_on_hour_tick"]
