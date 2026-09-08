@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ps4na6ndhgc4"]
+
+[ext_resource type="Script" uid="uid://dm0sqtilj5x1r" path="res://Asset/GameClock/game_clock.gd" id="1_l26py"]
+[ext_resource type="Script" uid="uid://uos023a1r4hs" path="res://Asset/GameClock/time_display.gd" id="2_y5mq2"]
+
+[node name="GameClock" type="Node" unique_id=1905810359]
+script = ExtResource("1_l26py")
+
+[node name="TimeDisplay" type="Label" parent="." unique_id=1779260209]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.07561728
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Time"
+horizontal_alignment = 1
+script = ExtResource("2_y5mq2")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="time_changed" from="." to="TimeDisplay" method="_on_game_clock_time_changed"]
