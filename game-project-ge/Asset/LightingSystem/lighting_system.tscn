@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c3wy0d0xqjq68"]
+
+[ext_resource type="Script" uid="uid://cm56j0at0ivid" path="res://Asset/LightingSystem/lighting_system.gd" id="1_hhp5d"]
+
+[node name="LightingSystem" type="Node" unique_id=2134486860]
+script = ExtResource("1_hhp5d")
+enable_test_blackouts = false

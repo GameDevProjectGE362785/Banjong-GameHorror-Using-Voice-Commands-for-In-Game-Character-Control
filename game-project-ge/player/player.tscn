@@ -28,16 +28,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595, -0.35)
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraController" unique_id=1718595647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.515, 0, 0.52834046, -0.5075002)
+transform = Transform3D(1.32, 0, 0, 0, 1.32, 0, 0, 0, 2, 0, 0.52834046, -0.5075002)
 target_position = Vector3(0, 0, -1)
 collision_mask = 2
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraController" unique_id=966368335]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.35898876)
 light_energy = 1.989
-spot_range = 4.148
-spot_attenuation = 0.21
-spot_angle = 25.79
+spot_range = 10.0
+spot_attenuation = 0.9
+spot_angle = 30.0
 spot_angle_attenuation = 1.414212
 
 [node name="CameraView" parent="." unique_id=554294395 instance=ExtResource("3_yw30f")]

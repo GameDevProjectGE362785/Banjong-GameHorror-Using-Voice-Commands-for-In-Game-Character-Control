@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameProjectGE"
-run/main_scene="uid://cenwvphfkh3el"
+run/main_scene="uid://nqs5w5cktukr"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -25,6 +25,7 @@ input/transcribe/use_gpu=false
 
 GameClock="*res://Asset/GameClock/game_clock.gd"
 EventScheduler="*res://Asset/EventScheduler/event_scheduler.gd"
+LightingSystem="*res://Asset/LightingSystem/lighting_system.gd"
 
 [display]
 
