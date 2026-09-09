@@ -1,11 +1,59 @@
 [gd_scene format=3 uid="uid://nqs5w5cktukr"]
 
 [ext_resource type="PackedScene" uid="uid://ddguv5qm7621p" path="res://temp/sketchfab_scene.tscn" id="1_55v2s"]
+[ext_resource type="PackedScene" uid="uid://dbntcfceyxx75" path="res://Asset/EventScheduler/events_scheduler.tscn" id="1_200h7"]
 [ext_resource type="PackedScene" uid="uid://cyh8yrsokurny" path="res://player/player.tscn" id="2_dayku"]
+[ext_resource type="PackedScene" uid="uid://ps4na6ndhgc4" path="res://Asset/GameClock/game_clock.tscn" id="2_rwrmc"]
 
-[node name="Test_map" type="Node3D" unique_id=1654686854]
+[sub_resource type="Environment" id="Environment_g4v7s"]
+background_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.1104582, 0.12413808, 0.1454244, 1)
+fog_density = 0.1
+
+[node name="Test_map" type="Node" unique_id=1154989283]
+
+[node name="EventsScheduler" parent="." unique_id=659291456 instance=ExtResource("1_200h7")]
+
+[node name="GameClock" parent="." unique_id=1905810359 instance=ExtResource("2_rwrmc")]
 
 [node name="Sketchfab_Scene" parent="." unique_id=1719942057 instance=ExtResource("1_55v2s")]
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." unique_id=965063473 instance=ExtResource("2_dayku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.301761, 2, 3)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1164329377]
+environment = SubResource("Environment_g4v7s")
+
+[node name="MapLightBlubs" type="Node" parent="." unique_id=2059440646]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MapLightBlubs" unique_id=1956640126]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45206475, 4.549714, -9.050754)
+spot_range = 12.555
+spot_angle = 38.82
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="MapLightBlubs" unique_id=430237568]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.105923, 4.549714, -9.050754)
+spot_range = 12.555
+spot_angle = 38.82
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="MapLightBlubs" unique_id=2070303474]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45206475, 4.549714, -17.343521)
+spot_range = 12.555
+spot_angle = 38.82
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="MapLightBlubs" unique_id=904746829]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.08618, 4.549714, -17.343521)
+spot_range = 12.555
+spot_angle = 38.82
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="MapLightBlubs" unique_id=890808879]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45206475, 4.549714, -26.008516)
+spot_range = 12.555
+spot_angle = 38.82
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="MapLightBlubs" unique_id=649896449]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 10.08605, 4.549714, -26.008516)
+spot_range = 12.555
+spot_angle = 38.82

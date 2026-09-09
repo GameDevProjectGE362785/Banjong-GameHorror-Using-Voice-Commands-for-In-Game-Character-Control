@@ -16,5 +16,3 @@ text = "Time"
 horizontal_alignment = 1
 script = ExtResource("2_y5mq2")
 metadata/_edit_use_anchors_ = true
-
-[connection signal="time_changed" from="." to="TimeDisplay" method="_on_game_clock_time_changed"]
