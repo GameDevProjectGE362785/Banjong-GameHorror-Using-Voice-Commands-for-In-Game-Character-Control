@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ps4na6ndhgc4" path="res://Asset/GameClock/game_clock.tscn" id="2_rwrmc"]
 [ext_resource type="PackedScene" uid="uid://djc0c1l7ltf5t" path="res://Asset/MapLight/map_light_blubs.tscn" id="5_rwrmc"]
 [ext_resource type="PackedScene" uid="uid://c3orp2gl3w6qi" path="res://Asset/StatesDisplayer/states_displayer.tscn" id="6_nbo30"]
+[ext_resource type="PackedScene" uid="uid://cokb4y4nu67t2" path="res://Asset/electricBox/electric_Box.tscn" id="7_bfbwu"]
+[ext_resource type="PackedScene" uid="uid://cktlshhe6u5r5" path="res://Asset/Fuse/Fuse.tscn" id="8_5enco"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 background_mode = 1
@@ -61,3 +63,20 @@ spot_range = 12.555
 spot_angle = 38.82
 
 [node name="StatesDisplayer" parent="." unique_id=514597259 instance=ExtResource("6_nbo30")]
+
+[node name="Electric" type="Node" parent="." unique_id=1269331572]
+
+[node name="ElectricBox" parent="Electric" unique_id=796023818 instance=ExtResource("7_bfbwu")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 12.155635, 0.5984634, 0.13874388)
+
+[node name="Fuse" parent="Electric" unique_id=1962960150 instance=ExtResource("8_5enco")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.1608111, 0.17173159, 0)
+
+[node name="Fuse2" parent="Electric" unique_id=1787696588 instance=ExtResource("8_5enco")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.3911079, 0.17173159, 0)
+
+[node name="Fuse3" parent="Electric" unique_id=1804730919 instance=ExtResource("8_5enco")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6226526, 0.17173159, 0)
+
+[node name="Fuse4" parent="Electric" unique_id=142567154 instance=ExtResource("8_5enco")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.9213027, 0.17173159, 0)

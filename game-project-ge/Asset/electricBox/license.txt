@@ -1,0 +1,11 @@
+Model Information:
+* title:	Electric Meter with fuse boxes
+* source:	https://sketchfab.com/3d-models/electric-meter-with-fuse-boxes-33c41e0176cd41d8bbc40185683ee441
+* author:	BarrySArt (https://sketchfab.com/BarrySArt)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Electric Meter with fuse boxes" (https://sketchfab.com/3d-models/electric-meter-with-fuse-boxes-33c41e0176cd41d8bbc40185683ee441) by BarrySArt (https://sketchfab.com/BarrySArt) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

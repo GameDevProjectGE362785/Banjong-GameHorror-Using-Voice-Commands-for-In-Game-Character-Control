@@ -22,12 +22,6 @@ var flashlighton = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-	# Connect to LightingSystem to handle flashlight state changes
-	if has_node("/root/LightingSystem"):
-		LightingSystem.lighting_state_changed.connect(_on_lighting_state_changed)
-		# Sync initial flashlight state with current lighting
-		_sync_flashlight_with_lighting()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -86,10 +80,21 @@ func checkObjectInfront():
 			else:
 				UI.TextChanger("Inventory Full")
 				UI.setCollition(true)
+		elif get_interaction_target(item) != null:
+			UI.TextChanger(get_interaction_target(item).getInteractive())
+			UI.setCollition(true)
 		else:
 			UI.setCollition(false)
 	else:
 		UI.setCollition(false)
+
+func get_interaction_target(collider: Object) -> Node:
+	var current: Node = collider as Node
+	while current != null:
+		if current.has_method("use_item"):
+			return current
+		current = current.get_parent()
+	return null
 
 func use_pickup_or_item() -> void:
 	if not raycast.is_colliding():
@@ -138,7 +143,11 @@ func use_selected_item() -> void:
 		UI.setCollition(true)
 		return
 
-	var target = raycast.get_collider()
+	var target: Node = get_interaction_target(raycast.get_collider())
+	if target == null:
+		UI.TextChanger("Cannot Use Item Here")
+		UI.setCollition(true)
+		return
 	if not target.has_method("use_item"):
 		UI.TextChanger("Cannot Use Item Here")
 		UI.setCollition(true)
@@ -227,34 +236,8 @@ func get_visual_bottom(node: Node3D) -> float:
 	return lowest_y
 
 func flashLightFunction():
-	# Check if flashlight is available based on LightingSystem
-	if has_node("/root/LightingSystem") and not LightingSystem.is_flashlight_available():
-		UI.TextChanger("Flashlight unavailable during blackout")
-		return
-	
 	flashlighton = !flashlighton
 	flashlight.visible = flashlighton
-
-
-## Called when LightingSystem state changes
-func _on_lighting_state_changed(new_state: int) -> void:
-	# Turn off flashlight during blackout, regardless of previous state
-	if new_state == LightingSystem.LightingState.BLACKOUT:
-		flashlighton = false
-		flashlight.visible = false
-		UI.TextChanger("Lights cut out!")
-	else:
-		# Restore previous flashlight state when exiting blackout
-		_sync_flashlight_with_lighting()
-
-
-## Sync flashlight state with current lighting conditions
-func _sync_flashlight_with_lighting() -> void:
-	if has_node("/root/LightingSystem"):
-		# Ensure flashlight is off during blackout
-		if not LightingSystem.is_flashlight_available():
-			flashlighton = false
-			flashlight.visible = false
 
 
 	

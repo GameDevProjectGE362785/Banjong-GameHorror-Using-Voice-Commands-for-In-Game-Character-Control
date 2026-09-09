@@ -11,12 +11,14 @@ enum LightingState {
 	BLACKOUT
 }
 
-var current_state := LightingState.NORMAL
+# The factory lights stay off until the ElectricBox receives all Fuses.
+var current_state := LightingState.BLACKOUT
+var power_restored := false
 var _flicker_timer := 0.0
 var _flicker_interval := 0.1
 
 ## Development/testing: enable periodic blackouts every 30 in-game minutes
-@export var enable_test_blackouts := true
+@export var enable_test_blackouts := false
 var _last_blackout_minute := -1
 
 
@@ -35,6 +37,8 @@ func _process(delta: float) -> void:
 
 ## Change the lighting state to a new state
 func set_state(new_state: LightingState) -> void:
+	if power_restored and new_state == LightingState.BLACKOUT:
+		return
 	if new_state == current_state:
 		return
 	
@@ -59,6 +63,11 @@ func is_in_state(state: LightingState) -> bool:
 	return current_state == state
 
 
+func restore_factory_power() -> void:
+	power_restored = true
+	set_state(LightingState.NORMAL)
+
+
 ## Flicker the lights by rapidly toggling between NORMAL and a dim state
 ## This is handled by the flashlight's visual effect, not by state changes
 func _update_flicker(delta: float) -> void:
@@ -74,9 +83,9 @@ func _reset_flicker() -> void:
 
 ## Called when GameClock ticks an hour
 func _on_hour_tick(hour: int) -> void:
-	# Hook point for future lighting schedule logic
-	# For now, lighting state is controlled manually via set_state()
-	pass
+	# The first story beat represents 12:00:00, when the factory power is out.
+	if hour == 0 and not power_restored:
+		set_state(LightingState.BLACKOUT)
 
 
 ## Called when time changes (minute-level granularity)
