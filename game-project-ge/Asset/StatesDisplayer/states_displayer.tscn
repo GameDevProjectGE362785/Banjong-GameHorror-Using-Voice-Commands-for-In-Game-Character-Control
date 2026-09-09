@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c3orp2gl3w6qi"]
+
+[ext_resource type="Script" uid="uid://bsufbnjb2oilb" path="res://Asset/StatesDisplayer/states_displayer.gd" id="1_3qa0l"]
+
+[node name="StatesDisplayer" type="Control" unique_id=514597259]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3qa0l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=651446302]
+layout_mode = 0
+offset_right = 186.0
+offset_bottom = 137.0
+
+[node name="LightState" type="Label" parent="VBoxContainer" unique_id=1157581454]
+layout_mode = 2
+text = "LightState : "

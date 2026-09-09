@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djc0c1l7ltf5t"]
+
+[ext_resource type="Script" uid="uid://fe7t6e88wjar" path="res://Asset/MapLight/map_light_blubs.gd" id="1_of1h0"]
+
+[node name="MapLightBlubs" type="Node" unique_id=1885680585]
+script = ExtResource("1_of1h0")
