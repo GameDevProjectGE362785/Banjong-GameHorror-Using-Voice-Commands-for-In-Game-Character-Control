@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dc5gp47l38lg3"]
+
+[node name="TestKnock_tscn" type="Node2D" unique_id=1510139430]
+
+[node name="Label" type="Label" parent="." unique_id=24373200]
+offset_left = 252.0
+offset_top = 177.0
+offset_right = 840.0
+offset_bottom = 527.0

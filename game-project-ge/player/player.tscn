@@ -10,6 +10,8 @@
 radius = 0.57714844
 height = 2.0390625
 
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_g1dw6"]
+
 [node name="Player" type="CharacterBody3D" unique_id=965063473]
 script = ExtResource("1_oul6g")
 
@@ -41,3 +43,8 @@ spot_angle = 30.0
 spot_angle_attenuation = 1.414212
 
 [node name="CameraView" parent="." unique_id=554294395 instance=ExtResource("3_yw30f")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=308477569]
+stream = SubResource("AudioStreamMicrophone_g1dw6")
+autoplay = true
+bus = &"Mic"
